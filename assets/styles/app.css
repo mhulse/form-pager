@@ -1,0 +1,218 @@
+/*
+
+Key	     CSS Media Query                           Applies      Classname
+----------------------------------------------------------------------------
+None     None                                      Always       .pure-u-*
+sm       @media screen and (min-width: 35.5em)     ≥ 568px      .pure-u-sm-*
+md       @media screen and (min-width: 48em)       ≥ 768px      .pure-u-md-*
+lg       @media screen and (min-width: 64em)       ≥ 1024px     .pure-u-lg-*
+xl       @media screen and (min-width: 80em)       ≥ 1280px     .pure-u-xl-*
+
+*/
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+html,
+body {
+	background: #ccc;
+	overflow-x: hidden;
+}
+
+html {
+	height: 100%;
+	overflow-y: scroll;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	position: relative;
+}
+
+body {
+	font: 16px/1.25 "Ubuntu", Arial, sans-serif;
+	min-height: 100%;
+}
+
+body { padding: 10px 10px 50px; }
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 10px 0;
+	padding: 0;
+}
+
+.sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
+	color: #786a55;
+	font-weight: normal;
+}
+
+h1, .h1, .sh1 {
+	font-size: 34px;
+	line-height: 36px;
+}
+
+h2, .h2, .sh2 {
+	font-size: 30px;
+	line-height: 32px;
+}
+
+h3, .h3, .sh3 {
+	font-size: 26px;
+	line-height: 28px;
+}
+
+h4, .h4, .sh4 {
+	font-size: 22px;
+	line-height: 24px;
+}
+
+h5, .h5, .sh5 {
+	font-size: 18px;
+	line-height: 20px;
+}
+
+h6, .h6, .sh6 {
+	font-size: 14px;
+	line-height: 26px;
+}
+
+h1:empty { display: none; }
+
+/* http://purecss.io/grids/ */
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class *= "pure-u"] { font-family: "Ubuntu", Arial, sans-serif; }
+
+main {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+header[role="banner"] {
+	margin: 0 0 10px;
+	position: relative;
+}
+
+/*
+<h6 class="logo"><a href="#">Company Name</a></h6>
+*/
+
+.logo {
+	line-height: 1;
+	text-indent: -999em;
+	white-space: nowrap;
+	width: 238px;
+	height: 35px;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	-webkit-touch-callout: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+}
+.logo a {
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/logo@2x.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: block;
+}
+.logo a:active,
+.logo a:focus { outline: none; }
+
+#progress {
+	height: 20px;
+	border: 1px solid #000;
+	border-radius: 3px;
+	background: #ddd;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, .15) 0, rgba(0, 0, 0, 0) 100%);
+	margin-top: 10px;
+	overflow: hidden;
+	position: relative;
+}
+#progress div {
+	background: #8eb92a;
+	background: linear-gradient(to bottom, #bfd255 0, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	z-index: 2;
+}
+#progress span {
+	color: #000;
+	text-align: center;
+	letter-spacing: .025em;
+	width: 100%;
+	position: absolute;
+	z-index: 3;
+}
+@media all and (min-width: 480px) {
+	#progress {
+		margin: 0;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 258px;
+	}
+}
+
+#content {
+	border-radius: 10px;
+	background: #fff;
+	min-height: 400px;
+	padding: 20px 20px 80px;
+	position: relative;
+}
+
+footer[role="contentinfo"] p {
+	font-size: smaller;
+	margin: 5px 0 0;
+}
+
+form > footer:last-child {
+	text-align: center;
+	border-top: 1px solid #d1d1d2;
+	padding: 10px 0 0;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+}
+form > footer:last-child,
+form > footer:last-child button { display: none; } /* Shown via JS. */
+
+#prev { float: left; }
+#next,
+#submit { float: right; }
+
+.js form > section { display: none; } /* If JS is turned off, make complete form accessible. */
+form > section > :first-child { margin-top: 0; }
+form > section > :last-child { margin-bottom: 0; }
+
+.error,
+label span,
+.required { color: #b94a48; }
+
+.pure-form textarea {
+	width: 50%;
+	height: 10em;
+}
+@media all and (max-width: 480px) {
+	.pure-form select,
+	.pure-form textarea,
+	.pure-form input[type=text],
+	.pure-form input[type=email],
+	.pure-form input[type=password],
+	.pure-form input[type=tel] { width: 100%; }
+}
+
+.text-center { text-align: center; }
