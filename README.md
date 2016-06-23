@@ -1,6 +1,6 @@
 # Form Pager
 
-**A simple, single-page, form pagination template shell (using [jQuery](https://jquery.com/)).
+**A simple, single-page, form pagination template shell (using [jQuery](https://jquery.com/)).**
 
 Depends on:
 
