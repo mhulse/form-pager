@@ -1,0 +1,87 @@
+/* Progress can go anywhere as long as its parent is `position: relative`. */
+#progress {
+	height: 20px;
+	border: 1px solid #000;
+	border-radius: 3px;
+	background: #ddd;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, .15) 0, rgba(0, 0, 0, 0) 100%);
+	margin-top: 10px;
+	overflow: hidden;
+	position: relative;
+}
+#progress div {
+	background: #8eb92a;
+	background: linear-gradient(to bottom, #bfd255 0, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
+	box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	z-index: 2;
+}
+#progress span {
+	color: #000;
+	text-align: center;
+	letter-spacing: .025em;
+	width: 100%;
+	position: absolute;
+	z-index: 3;
+}
+@media all and (min-width: 480px) {
+	#progress {
+		margin: 0;
+		position: absolute;
+		/* You’ll probably want to cheange these to suit your needs: */
+		right: 0;
+		bottom: 0;
+		left: 258px;
+	}
+}
+
+#form-pager {
+	border-radius: 10px;
+	background: #fff;
+	min-height: 400px;
+	padding: 20px 20px 80px;
+	position: relative;
+}
+
+#form-pager .steps-nav {
+	text-align: center;
+	border-top: 1px solid #d1d1d2;
+	padding: 10px 0 0;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+}
+#form-pager .steps-nav,
+#form-pager .steps-nav button { display: none; } /* Shown via JS. */
+
+#form-pager .steps-nav .prev { float: left; }
+#form-pager .steps-nav .next,
+#form-pager .steps-nav .submit { float: right; }
+
+.js #form-pager .steps > .step { display: none; } /* If JS is turned off, make complete form accessible. */
+#form-pager .steps > :first-child { margin-top: 0; }
+#form-pager .steps > :last-child { margin-bottom: 0; }
+
+#form-pager .error,
+#form-pager label span,
+#form-pager .required { color: #b94a48; }
+
+#form-pager textarea {
+	width: 50%;
+	height: 10em;
+}
+@media all and (max-width: 480px) {
+	#form-pager select,
+	#form-pager textarea,
+	#form-pager input[type=text],
+	#form-pager input[type=email],
+	#form-pager input[type=password],
+	#form-pager input[type=tel] { width: 100%; }
+}
+
+#form-pager .text-center { text-align: center; }

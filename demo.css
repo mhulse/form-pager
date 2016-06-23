@@ -98,6 +98,11 @@ header[role="banner"] {
 	position: relative;
 }
 
+footer[role="contentinfo"] p {
+	font-size: smaller;
+	margin: 5px 0 0;
+}
+
 /*
 <h6 class="logo"><a href="#">Company Name</a></h6>
 */
@@ -125,94 +130,3 @@ header[role="banner"] {
 }
 .logo a:active,
 .logo a:focus { outline: none; }
-
-#progress {
-	height: 20px;
-	border: 1px solid #000;
-	border-radius: 3px;
-	background: #ddd;
-	background: linear-gradient(to bottom, rgba(0, 0, 0, .15) 0, rgba(0, 0, 0, 0) 100%);
-	margin-top: 10px;
-	overflow: hidden;
-	position: relative;
-}
-#progress div {
-	background: #8eb92a;
-	background: linear-gradient(to bottom, #bfd255 0, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
-	box-shadow: 0 0 10px rgba(0, 0, 0, .5);
-	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	width: 0;
-	z-index: 2;
-}
-#progress span {
-	color: #000;
-	text-align: center;
-	letter-spacing: .025em;
-	width: 100%;
-	position: absolute;
-	z-index: 3;
-}
-@media all and (min-width: 480px) {
-	#progress {
-		margin: 0;
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		left: 258px;
-	}
-}
-
-#content {
-	border-radius: 10px;
-	background: #fff;
-	min-height: 400px;
-	padding: 20px 20px 80px;
-	position: relative;
-}
-
-footer[role="contentinfo"] p {
-	font-size: smaller;
-	margin: 5px 0 0;
-}
-
-form > footer:last-child {
-	text-align: center;
-	border-top: 1px solid #d1d1d2;
-	padding: 10px 0 0;
-	position: absolute;
-	bottom: 10px;
-	left: 10px;
-	right: 10px;
-}
-form > footer:last-child,
-form > footer:last-child button { display: none; } /* Shown via JS. */
-
-#prev { float: left; }
-#next,
-#submit { float: right; }
-
-.js form > section { display: none; } /* If JS is turned off, make complete form accessible. */
-form > section > :first-child { margin-top: 0; }
-form > section > :last-child { margin-bottom: 0; }
-
-.error,
-label span,
-.required { color: #b94a48; }
-
-.pure-form textarea {
-	width: 50%;
-	height: 10em;
-}
-@media all and (max-width: 480px) {
-	.pure-form select,
-	.pure-form textarea,
-	.pure-form input[type=text],
-	.pure-form input[type=email],
-	.pure-form input[type=password],
-	.pure-form input[type=tel] { width: 100%; }
-}
-
-.text-center { text-align: center; }
