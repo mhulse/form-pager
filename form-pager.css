@@ -12,12 +12,13 @@
 #progress div {
 	background: #8eb92a;
 	background: linear-gradient(to bottom, #bfd255 0, #8eb92a 50%, #72aa00 51%, #9ecb2d 100%);
+	width: 0;
+	min-width: 3em !important;
 	box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 	position: absolute;
 	top: 0;
 	left: 0;
 	bottom: 0;
-	width: 0;
 	z-index: 2;
 }
 #progress span {
