@@ -4,7 +4,7 @@
  * @see http://www.amitpatil.me/multi-step-form-with-progress-bar-and-validation/
  */
 
-(function($, undefined) {
+(function($, document, undefined) {
 	
 	'use strict';
 	
@@ -20,7 +20,7 @@
 		var $prev = $fp.find('.prev');
 		var $next = $fp.find('.next');
 		var $submit = $fp.find('.submit');
-		
+		var top = function() { $(document).scrollTop(0); };
 		// Change progress bar action:
 		var progress = function(step) {
 			var percent = parseFloat(100 / $step.length) * step;
@@ -80,11 +80,17 @@
 				
 				// Check validation:
 				if ($form.valid()) {
+					
 					$step.show();
+					
 					$step
 						.not(':eq(' + (current++) + ')')
 						.hide();
+					
+					top();
+					
 					progress(current);
+					
 				}
 			}
 			
@@ -96,16 +102,27 @@
 		$prev.click(function() {
 			
 			if (current > 1) {
+				
 				current = current - 2;
+				
 				if (current < $step.length) {
+					
 					$step.show();
+					
 					$step
 						.not(':eq(' + (current++) + ')')
 						.hide();
+					
+					top();
+					
 					progress(current);
+					
 				}
+				
 			}
+			
 			buttons(current);
+			
 		});
 		
 		// Submit button click:
@@ -135,4 +152,4 @@
 		
 	});
 	
-}(jQuery));
+}(jQuery, document));
