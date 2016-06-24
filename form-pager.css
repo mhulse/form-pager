@@ -33,6 +33,7 @@
 	#progress {
 		margin: 0;
 		position: absolute;
+		z-index: 100;
 		/* You’ll probably want to cheange these to suit your needs: */
 		right: 0;
 		bottom: 0;
