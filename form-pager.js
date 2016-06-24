@@ -58,7 +58,7 @@
 				
 			}
 			
-			console.log('going', hash, current);
+			//console.log('going', hash, current);
 			
 			// Init buttons and UI:
 			$step
