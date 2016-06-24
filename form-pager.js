@@ -96,7 +96,9 @@
 		});
 		
 		// Next button click action
-		$next.click(function(){
+		$next.click(function($event){
+			
+			$event.preventDefault();
 			
 			if (current < $step.length) {
 				
@@ -121,7 +123,9 @@
 		});
 		
 		// Back button click action:
-		$prev.click(function() {
+		$prev.click(function($event) {
+			
+			$event.preventDefault();
 			
 			if (current > 1) {
 				
