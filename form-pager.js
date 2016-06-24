@@ -4,7 +4,7 @@
  * @see http://www.amitpatil.me/multi-step-form-with-progress-bar-and-validation/
  */
 
-(function($, document, undefined) {
+(function($, document, window, undefined) {
 	
 	'use strict';
 	
@@ -13,6 +13,7 @@
 	function main() {
 		
 		var current = 1;
+		var $document = $(document);
 		var $progress = $('#progress');
 		var $form = $fp.find('form');
 		var $nav = $fp.find('.steps-nav');
@@ -20,7 +21,7 @@
 		var $prev = $fp.find('.prev');
 		var $next = $fp.find('.next');
 		var $submit = $fp.find('.submit');
-		var top = function() { $(document).scrollTop(0); };
+		var top = function() { $document.scrollTop(0); };
 		// Change progress bar action:
 		var progress = function(step) {
 			var percent = parseFloat(100 / $step.length) * step;
@@ -32,7 +33,6 @@
 				.children('span')
 				.text(percent + '%');
 		};
-		
 		// Hide buttons according to the current step:
 		var buttons = function(step) {
 			var limit = parseInt($step.length);
@@ -47,6 +47,28 @@
 				$next.hide();
 				$submit.show();
 			}
+		};
+		var go = function() {
+			
+			var hash = window.location.hash;
+			
+			if (hash) { // Fragment exists:
+				
+				current = parseInt(hash.replace(/^[^0-9]+/, ''), 10);
+				
+			}
+			
+			console.log('going', hash, current);
+			
+			// Init buttons and UI:
+			$step
+				.show()
+				.not(':eq(' + (current - 1) + ')')
+				.hide();
+			buttons(current);
+			progress(current);
+			$nav.show();
+			
 		};
 		
 		// Initialize validation plugin:
@@ -97,7 +119,7 @@
 			buttons(current);
 			
 		});
-
+		
 		// Back button click action:
 		$prev.click(function() {
 			
@@ -130,14 +152,9 @@
 			//alert('Submit button clicked');
 		});
 		
-		// Init buttons and UI:
-		$step
-			.show()
-			.not(':eq(0)')
-			.hide();
-		buttons(current);
-		progress(current);
-		$nav.show();
+		$(window).on('hashchange', go);
+		
+		go();
 		
 	}
 	
@@ -152,4 +169,4 @@
 		
 	});
 	
-}(jQuery, document));
+}(jQuery, document, window));
