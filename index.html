@@ -16,6 +16,15 @@
 	<link rel="stylesheet" href="demo.css">
 	<link rel="stylesheet" href="form-pager.css">
 	
+	<style>
+		
+		.gone {
+			display: none !important;
+			visibility: hidden;
+		}
+		
+	</style>
+	
 </head>
 <body>
 	
@@ -325,6 +334,18 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
 	<script src="form-pager.js"></script>
+	
+	<script>
+		
+		$(function() {
+			
+			$('#form-pager').pager();
+			
+			$('#form-pager').pager('showPage', 2);
+			
+		});
+		
+	</script>
 	
 </body>
 </html>

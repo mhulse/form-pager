@@ -59,13 +59,13 @@
 	right: 10px;
 }
 #form-pager .steps-nav,
-#form-pager .steps-nav button { display: none; } /* Shown via JS. */
+#form-pager .steps-nav button { xdisplay: none; } /* Shown via JS. */
 
 #form-pager .steps-nav .prev { float: left; }
 #form-pager .steps-nav .next,
 #form-pager .steps-nav .submit { float: right; }
 
-.js #form-pager .steps > .step { display: none; } /* If JS is turned off, make complete form accessible. */
+.js #form-pager .steps > .step { xdisplay: none; } /* If JS is turned off, make complete form accessible. */
 #form-pager .steps > :first-child { margin-top: 0; }
 #form-pager .steps > :last-child { margin-bottom: 0; }
 
