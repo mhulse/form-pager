@@ -1,16 +1,14 @@
-/* globals jQuery */
-
 /**
  * This could use a lot more work.
  *
  * @see http://www.amitpatil.me/multi-step-form-with-progress-bar-and-validation/
  */
 
-(function(self, $, document, window, undefined) {
+(function($, document, window, undefined) {
 	
 	'use strict';
 	
-	var $fp;
+	var $fp = $('#form-pager');
 	
 	function main() {
 		
@@ -164,32 +162,15 @@
 		
 	}
 	
-	$
-	
-	// Public API:
-	self = {
-		init: function(defaults) {
+	$(function() {
+		
+		// Only begin if pager exists:
+		if ($fp.find('.steps').length) {
 			
-			$fp = $(defaults.selector);
-			
-			// Only begin if pager exists:
-			if ($fp.find('.steps').length) {
-				
-				main(); // Begin!
-				
-			}
+			main(); // Begin!
 			
 		}
-	};
-	
-	return self;
-	
-}(window.PAGER = (window.PAGER || {}), jQuery, document, window));
-
-$(function() {
-	
-	PAGER.init({
-		selector: '#form-pager'
+		
 	});
 	
-}
+}(jQuery, document, window));
