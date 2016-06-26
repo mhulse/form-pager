@@ -70,6 +70,11 @@
 					</div>
 					
 					<div class="pure-control-group">
+						<label for="age">Age</label>
+						<input type="number" name="" id="" class="step-control-show" data-page-ids="#page7" data-page-rules="age" value="">
+					</div>
+					
+					<div class="pure-control-group">
 						<label for="phone-number">Phone number</label>
 						<input type="tel" name="phone-number" id="phone-number" placeholder="555-555-5555">
 					</div>
@@ -330,6 +335,12 @@
 					
 				</section>
 				
+				<section id="page7" class="step-hide">
+					
+					<h3>Age over 50</h3>
+					
+				</section>
+				
 				<footer class="steps-nav">
 					
 					<button type="button" class="prev pure-button">Previous</button>
@@ -349,6 +360,24 @@
 		</footer>
 		
 	</main>
+	
+	<script>
+		
+		function age(rule) {
+			
+			var result = 'hide';
+			
+			if ($(this).val() >= 50) {
+				
+				result = 'show';
+				
+			}
+			
+			return result;
+			
+		}
+		
+	</script>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>

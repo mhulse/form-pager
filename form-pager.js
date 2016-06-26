@@ -92,14 +92,31 @@
 		};
 		var control = function(kind) {
 			
-			var $this = $(this);
+			var self = this;
+			var $this = $(self);
 			var $data = $this.data('page-ids');
+			var $rules = $this.data('page-rules');
 			var $elements = $($data);
 			var $count = $elements.length;
 			
+			if ($rules.length) {
+				
+				$.each($rules.split(','), function(index, value) {
+					
+					if ($.isFunction(window[value])) {
+						
+						kind = window[value].call(self);
+						
+					}
+					
+				});
+				
+			}
+			
 			switch(kind) {
 				case 'toggle':
-					$elements.toggleClass('step step-hide');
+					$elements
+						.toggleClass('step step-hide');
 					break;
 				case 'show':
 					$elements
