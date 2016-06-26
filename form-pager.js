@@ -99,17 +99,17 @@
 			
 			switch(kind) {
 				case 'toggle':
-					$elements.toggleClass('step step-gone');
+					$elements.toggleClass('step step-hide');
 					break;
 				case 'show':
 					$elements
-						.removeClass('step-gone')
+						.removeClass('step-hide')
 						.addClass('step');
 					break;
 				case 'hide':
 					$elements
 						.removeClass('step')
-						.addClass('step-gone');
+						.addClass('step-hide');
 					break;
 			}
 			
