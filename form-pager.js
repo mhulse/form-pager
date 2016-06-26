@@ -15,7 +15,9 @@
 		var current = 1;
 		var $document = $(document);
 		var $progress = $('#progress');
-		var $control = $('.step-control');
+		var $toggle = $('.step-control-toggle');
+		var $show = $('.step-control-show');
+		var $hide = $('.step-control-hide');
 		var $form = $fp.find('form');
 		var $nav = $fp.find('.steps-nav');
 		var $step = $fp.find('.step');
@@ -25,29 +27,39 @@
 		var top = function() { $document.scrollTop(0); };
 		// Change progress bar action:
 		var progress = function(step) {
+			
 			var percent = parseFloat(100 / $step.length) * step;
+			
 			percent = percent.toFixed();
+			
 			$progress
 				.children('div')
 				.css('width', percent + '%')
 				.end()
 				.children('span')
 				.text(percent + '%');
+			
 		};
 		// Hide buttons according to the current step:
 		var buttons = function(step) {
+			
 			var limit = parseInt($step.length);
+			
 			$nav.find('button').hide();
+			
 			if (step < limit) {
 				$next.show();
 			}
+			
 			if (step > 1) {
 				$prev.show();
 			}
+			
 			if (step == limit) {
 				$next.hide();
 				$submit.show();
 			}
+			
 		};
 		var hash = function() {
 			
@@ -78,14 +90,29 @@
 			progress(current);
 			
 		};
-		var control = function() {
+		var control = function(kind) {
 			
 			var $this = $(this);
 			var $data = $this.data('page-ids');
 			var $elements = $($data);
 			var $count = $elements.length;
 			
-			$elements.toggleClass('step step-gone');
+			switch(kind) {
+				case 'toggle':
+					$elements.toggleClass('step step-gone');
+					break;
+				case 'show':
+					$elements
+						.removeClass('step-gone')
+						.addClass('step');
+					break;
+				case 'hide':
+					$elements
+						.removeClass('step')
+						.addClass('step-gone');
+					break;
+			}
+			
 			
 			$step = $fp.find('.step');
 			
@@ -99,12 +126,14 @@
 		$form.validate({
 			ignore: ':not(:visible)',
 			rules: {
-				name: 'required',
+				name: 'required'//,
 				// Just an example of how to do more advanced validation checks:
+				/*
 				dob: {
 					required: true,
 					date: true
 				}
+				*/
 			}
 			// If you don’t want to deal with the default error placement:
 			/*
@@ -119,9 +148,21 @@
 			*/
 		});
 		
-		$control.change(function() {
+		$toggle.change(function() {
 			
-			control.call(this);
+			control.call(this, 'toggle');
+			
+		});
+		
+		$show.change(function() {
+			
+			control.call(this, 'show');
+			
+		});
+		
+		$hide.change(function() {
+			
+			control.call(this, 'hide');
 			
 		});
 		
