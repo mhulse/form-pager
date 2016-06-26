@@ -2,10 +2,14 @@
 
 **A simple, single-page, form pagination template shell (using [jQuery](https://jquery.com/)).**
 
-Depends on:
+This is not a plugin. Honestly, the code isn’t pretty. One of these days I’ll clean things up.
+
+## Depends on
 
 1. [jQuery](https://jquery.com/)
 1. [jQuery Validate](https://github.com/jzaefferer/jquery-validation)
+
+## Preview
 
 Check out the demo: <https://mhulse.github.io/form-pager>
 
