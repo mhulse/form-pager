@@ -15,6 +15,7 @@
 		var current = 1;
 		var $document = $(document);
 		var $progress = $('#progress');
+		var $control = $('.step-control');
 		var $form = $fp.find('form');
 		var $nav = $fp.find('.steps-nav');
 		var $step = $fp.find('.step');
@@ -50,24 +51,29 @@
 		};
 		var go = function() {
 			
-			var hash = window.location.hash;
-			
-			if (hash) { // Fragment exists:
-				
-				current = parseInt(hash.replace(/^[^0-9]+/, ''), 10);
-				
-			}
-			
-			//console.log('going', hash, current);
-			
-			// Init buttons and UI:
 			$step
 				.show()
 				.not(':eq(' + (current - 1) + ')')
 				.hide();
+			
 			buttons(current);
 			progress(current);
-			$nav.show();
+			
+		};
+		var control = function() {
+			
+			var $this = $(this);
+			var $data = $this.data('page-ids');
+			var $elements = $($data);
+			var $count = $elements.length;
+			
+			$elements.toggleClass('step gone');
+			
+			$step = $fp.find('.step');
+			
+			current = ($step.index($this.parents('.step')) + 1);
+			
+			go();
 			
 		};
 		
@@ -95,14 +101,18 @@
 			*/
 		});
 		
-		// Next button click action
-		$next.click(function($event){
+		$control.change(function() {
+			
+			control.call(this);
+			
+		});
+		
+		$next.click(function($event) {
 			
 			$event.preventDefault();
 			
 			if (current < $step.length) {
 				
-				// Check validation:
 				if ($form.valid()) {
 					
 					$step.show();
@@ -122,7 +132,6 @@
 			
 		});
 		
-		// Back button click action:
 		$prev.click(function($event) {
 			
 			$event.preventDefault();
@@ -151,12 +160,7 @@
 			
 		});
 		
-		// Submit button click:
-		$submit.click(function() {
-			//alert('Submit button clicked');
-		});
-		
-		$(window).on('hashchange', go);
+		$nav.show();
 		
 		go();
 		
@@ -164,10 +168,9 @@
 	
 	$(function() {
 		
-		// Only begin if pager exists:
 		if ($fp.find('.steps').length) {
 			
-			main(); // Begin!
+			main();
 			
 		}
 		
