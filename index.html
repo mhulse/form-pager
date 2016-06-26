@@ -33,18 +33,21 @@
 			
 			<form class="pure-form steps">
 				
-				<section class="step">
+				<section id="page1" class="step">
 					
-					<h3>Welcome!</h3>
+					<h3>Page 1</h3>
 					
+					<!--
 					<p>The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex!</p>
+					-->
 					
-				</section> <!-- /.step -->
+				</section>
 				
-				<section class="pure-form-aligned step">
+				<section id="page2" class="pure-form-aligned step">
 					
-					<h3>Lorem ipsum</h3>
+					<h3>Page 2</h3>
 					
+					<!--
 					<p>The quick, brown fox jumps over a lazy dog.</p>
 					
 					<p class="required">* = required field</p>
@@ -52,17 +55,17 @@
 					<div class="pure-control-group">
 						<label for="first-name"><span>*</span> First name</label>
 						<input type="text" name="first-name" id="first-name" required>
-					</div> <!-- /.pure-control-group -->
+					</div>
 					
 					<div class="pure-control-group">
 						<label for="middle-name">Middle name</label>
 						<input type="text" name="middle-name" id="middle-name">
-					</div> <!-- /.pure-control-group -->
+					</div>
 					
 					<div class="pure-control-group">
 						<label for="last-name">Last name</label>
 						<input type="text" name="last-name" id="last-name">
-					</div> <!-- /.pure-control-group -->
+					</div>
 					
 					<div class="pure-control-group">
 						<label for="dob">Birthday</label>
@@ -72,27 +75,27 @@
 					<div class="pure-control-group">
 						<label for="phone-number">Phone number</label>
 						<input type="tel" name="phone-number" id="phone-number" placeholder="555-555-5555">
-					</div> <!-- /.pure-control-group -->
+					</div>
 					
 					<div class="pure-control-group">
 						<label for="mobile-phone-number">Mobile phone number</label>
 						<input type="tel" name="mobile-phone-number" id="mobile-phone-number" placeholder="555-555-5555">
-					</div> <!-- /.pure-control-group -->
+					</div>
 					
 					<div class="pure-control-group">
 						<label for="address">Address</label>
 						<input type="text" name="address" id="address">
-					</div> <!-- /.pure-control-group -->
+					</div>
 					
 					<div class="pure-control-group">
 						<label for="address-2">Address 2</label>
 						<input type="text" name="address-2" id="address-2">
-					</div> <!-- /.pure-control-group -->
+					</div>
 					
 					<div class="pure-control-group">
 						<label for="city">City</label>
 						<input type="text" name="city" id="city">
-					</div> <!-- /.pure-control-group -->
+					</div>
 					
 					<div class="pure-control-group">
 						<label for="state">State</label>
@@ -150,36 +153,46 @@
 							<option value="WI">Wisconsin</option>
 							<option value="WY">Wyoming</option>
 						</select>
-					</div> <!-- /.pure-control-group -->
+					</div>
 					
 					<div class="pure-control-group">
 						<label for="zip">ZIP</label>
 						<input type="text" name="zip" id="zip">
-					</div> <!-- /.pure-control-group -->
+					</div>
 					
 					<p>The quick, brown fox jumps over a lazy dog.</p>
 					
 					<div class="pure-control-group">
 						<label for="user-name">User name</label>
 						<input type="text" name="user-name" id="user-name">
-					</div> <!-- /.pure-control-group -->
+					</div>
 					
 					<div class="pure-control-group">
 						<label for="password">Password</label>
 						<input type="password" name="password" id="password">
-					</div> <!-- /.pure-control-group -->
+					</div>
 					
 					<div class="pure-control-group">
 						<label for="password-confirm">Confirm password</label>
 						<input type="password" name="password-confirm" id="password-confirm">
-					</div> <!-- /.pure-control-group -->
+					</div>
+					-->
 					
-				</section> <!-- /.step -->
+				</section>
 				
-				<section class="step">
+				<section id="page3" class="step">
 					
-					<h3>Lorem ipsum</h3>
+					<h3>Page 3</h3>
 					
+					<p>
+						<input type="checkbox" class="step-control" data-page-ids="#page4,#page5"> Toggle pages 4 and 5!
+						&nbsp;
+						<input type="radio" class="step-control" name="step-control-group" data-page-ids="#page1,#page2"> Toggle pages 1 and 2!
+						&nbsp;
+						<input type="radio" class="step-control" name="step-control-group" data-page-ids="#page1,#page2"> Toggle pages 1 and 2!
+					</p>
+					
+					<!--
 					<p>The quick, brown fox jumps over a lazy dog.</p>
 					
 					<div class="pure-g text-center">
@@ -192,9 +205,9 @@
 								Not
 								<br>
 								at all
-							</label> <!-- /.pure-radio -->
+							</label>
 							
-						</div> <!-- /.pure-u-1 -->
+						</div>
 						
 						<div class="pure-u-1 pure-u-sm-1-4">
 							
@@ -204,9 +217,9 @@
 								Several
 								<br>
 								days
-							</label> <!-- /.pure-radio -->
+							</label>
 							
-						</div> <!-- /.pure-u-1 -->
+						</div>
 						
 						<div class="pure-u-1 pure-u-sm-1-4">
 							
@@ -216,9 +229,9 @@
 								More than
 								<br>
 								half the days
-							</label> <!-- /.pure-radio -->
+							</label>
 							
-						</div> <!-- /.pure-u-1 -->
+						</div>
 						
 						<div class="pure-u-1 pure-u-sm-1-4">
 							
@@ -228,11 +241,11 @@
 								Nearly
 								<br>
 								every day
-							</label> <!-- /.pure-radio -->
+							</label>
 							
-						</div> <!-- /.pure-u-1 -->
+						</div>
 						
-					</div> <!-- /.pure-g -->
+					</div>
 					
 					<p>The quick, brown fox jumps over a lazy dog.</p>
 					
@@ -246,9 +259,9 @@
 								Not
 								<br>
 								at all
-							</label> <!-- /.pure-radio -->
+							</label>
 							
-						</div> <!-- /.pure-u-1 -->
+						</div>
 						
 						<div class="pure-u-1 pure-u-sm-1-4">
 							
@@ -258,9 +271,9 @@
 								Several
 								<br>
 								days
-							</label> <!-- /.pure-radio -->
+							</label>
 							
-						</div> <!-- /.pure-u-1 -->
+						</div>
 						
 						<div class="pure-u-1 pure-u-sm-1-4">
 							
@@ -270,9 +283,9 @@
 								More than
 								<br>
 								half the days
-							</label> <!-- /.pure-radio -->
+							</label>
 							
-						</div> <!-- /.pure-u-1 -->
+						</div>
 						
 						<div class="pure-u-1 pure-u-sm-1-4">
 							
@@ -282,16 +295,32 @@
 								Nearly
 								<br>
 								every day
-							</label> <!-- /.pure-radio -->
+							</label>
 							
-						</div> <!-- /.pure-u-1 -->
+						</div>
 						
-					</div> <!-- /.pure-g -->
+					</div>
+					-->
 					
-				</section> <!-- /.step -->
+				</section>
 				
-				<section class="step">
+				<section id="page4" class="step">
 					
+					<h3>Page 4</h3>
+					
+				</section>
+				
+				<section id="page5" class="step">
+					
+					<h3>Page 5</h3>
+					
+				</section>
+				
+				<section id="page6" class="step">
+					
+					<h3>Page 6</h3>
+					
+					<!--
 					<h3>Thanks for your help!</h3>
 					
 					<p>
@@ -299,8 +328,9 @@
 						<br>
 						Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim.
 					</p>
+					-->
 					
-				</section> <!-- /.step -->
+				</section>
 				
 				<footer class="steps-nav">
 					
@@ -308,11 +338,11 @@
 					<button type="button" class="next pure-button">Next</button>
 					<button type="submit" class="submit pure-button">Submit</button>
 					
-				</footer> <!-- /.steps-nav -->
+				</footer>
 				
-			</form> <!-- /.steps -->
+			</form>
 			
-		</div> <!-- /#form-pager -->
+		</div>
 		
 		<footer role="contentinfo">
 			

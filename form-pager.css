@@ -87,3 +87,8 @@
 }
 
 #form-pager .text-center { text-align: center; }
+
+#form-pager .gone {
+	display: none !important;
+	visibility: hidden;
+}
