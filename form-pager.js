@@ -94,12 +94,12 @@
 			
 			var self = this;
 			var $this = $(self);
-			var $data = $this.data('page-ids');
-			var $rules = $this.data('page-rules');
+			var $data = $this.data('pageIds');
+			var $rules = $this.data('pageRules');
 			var $elements = $($data);
 			var $count = $elements.length;
 			
-			if ($rules.length) {
+			if ($rules && $rules.length) {
 				
 				$.each($rules.split(','), function(index, value) {
 					
