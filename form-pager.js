@@ -49,6 +49,24 @@
 				$submit.show();
 			}
 		};
+		var hash = function() {
+			
+			var what = window.location.hash;
+			var $what = $(what);
+			
+			if ($what.length && $what.hasClass('step')) {
+				
+				if (what) {
+					
+					current = ($fp.find('.step').index($what) + 1);
+					
+				}
+				
+				go();
+				
+			}
+			
+		};
 		var go = function() {
 			
 			$step
@@ -67,7 +85,7 @@
 			var $elements = $($data);
 			var $count = $elements.length;
 			
-			$elements.toggleClass('step gone');
+			$elements.toggleClass('step step-gone');
 			
 			$step = $fp.find('.step');
 			
@@ -163,6 +181,8 @@
 		$nav.show();
 		
 		go();
+		
+		$(window).on('hashchange', hash);
 		
 	}
 	
